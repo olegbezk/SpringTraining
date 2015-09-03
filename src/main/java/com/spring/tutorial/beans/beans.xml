@@ -9,10 +9,10 @@
 		<property name="taxId">
 			<value>321</value>
 		</property>
-		<property name="adress" ref="adress"></property>
+		<property name="address" ref="address"></property>
 	</bean>
 
-	<bean id="adress" class="com.spring.tutorial.Adress">
+	<bean id="address" class="com.spring.tutorial.Address">
 		<constructor-arg name="street" value="1 Elm street"></constructor-arg>
 		<constructor-arg name="postCode" value="986"></constructor-arg>
 	</bean>

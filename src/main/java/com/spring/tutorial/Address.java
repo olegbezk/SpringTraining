@@ -1,15 +1,15 @@
 package com.spring.tutorial;
 
-public class Adress {
+public class Address {
 	
 	private String street;
 
 	private String postCode;
 
-	public Adress() {
+	public Address() {
 	}
 
-	public Adress(String street, String postCode) {
+	public Address(String street, String postCode) {
 		super();
 		this.street = street;
 		this.postCode = postCode;
@@ -17,7 +17,7 @@ public class Adress {
 
 	@Override
 	public String toString() {
-		return "Adress [street=" + street + ", postCode=" + postCode + "]";
+		return "Address [street=" + street + ", postCode=" + postCode + "]";
 	}
 
 }

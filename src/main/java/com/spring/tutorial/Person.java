@@ -5,7 +5,7 @@ public class Person {
 	private int id;
 	private String name;
 	private int taxId;
-	private Adress adress;
+	private Address adress;
 	
 	public Person() {
 	}
@@ -26,7 +26,7 @@ public class Person {
 		this.taxId = taxId;
 	}
 
-	public void setAdress(Adress adress) {
+	public void setAddress(Address adress) {
 		this.adress = adress;
 	}
 
