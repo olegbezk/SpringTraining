@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-destroy-method="destroy" default-init-method="init">
 
-	<bean id="person" class="com.spring.tutorial.Person">
+	<bean id="person" class="com.spring.tutorial.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Mary" name="name" type="String"></constructor-arg>
+		<property name="taxId">
+			<value>321</value>
+		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="person2" class="com.spring.tutorial.Person"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPerson" factory-bean="personfactory">
+		<constructor-arg value="555" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Mike" name="name" type="String"></constructor-arg>
 		<property name="taxId">
 			<value>321</value>
 		</property>
@@ -17,4 +30,7 @@
 		<constructor-arg name="postCode" value="986"></constructor-arg>
 	</bean>
 
+	<bean id="personfactory"
+		class="com.spring.tutorial.PersonFactory">
+	</bean>
 </beans>

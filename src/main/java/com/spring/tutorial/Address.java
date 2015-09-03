@@ -14,6 +14,10 @@ public class Address {
 		this.street = street;
 		this.postCode = postCode;
 	}
+	
+	public void init() {
+		System.out.println("Bean created: " + this);
+	}
 
 	@Override
 	public String toString() {

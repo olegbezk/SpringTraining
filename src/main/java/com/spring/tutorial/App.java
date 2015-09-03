@@ -11,10 +11,8 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/tutorial/beans/beans.xml");
 
 		Person person = (Person) context.getBean("person");
-		person.speak();
-
-		Address address = (Address) context.getBean("address");
-		System.out.println(address);
+		
+		person.setTaxId(666);
 
 		System.out.println(person);
 
